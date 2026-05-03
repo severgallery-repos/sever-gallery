@@ -10,9 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{--font-heading:'Bebas Neue',sans-serif;--font-body:'Inter',sans-serif;--color-background:#000;--color-foreground:#fff;--color-primary:#c0c0c0;--color-secondary:#0d0d0d;--color-border:#333;--page-width:1400px;--header-height:70px}*{box-sizing:border-box;margin:0;padding:0}html{font-size:62.5%}body{font-family:var(--font-body);font-size:1.4rem;line-height:1.6;color:var(--color-foreground);background-color:var(--color-background)}a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}.page-width{max-width:var(--page-width);margin:0 auto;padding:0 40px}.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--color-background);border-bottom:1px solid var(--color-border)}.header__inner{display:flex;align-items:center;justify-content:center;height:var(--header-height);position:relative}.header__nav{display:flex;gap:40px}.header__nav a{font-family:var(--font-heading);font-size:1.4rem;letter-spacing:.15em;transition:color .3s ease}.header__nav a:hover{color:var(--color-primary)}.header__icons{position:absolute;right:40px}.header__icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:color .3s ease}.header__icon:hover{color:var(--color-primary)}.header__icon svg{width:20px;height:20px}.mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:0 0;border:none;cursor:pointer;padding:5px;position:absolute;left:20px}.mobile-menu-btn span{width:24px;height:2px;background:var(--color-foreground)}
-    .product{padding:120px 0 80px}.product__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}.product__gallery{position:sticky;top:100px}.product__main-image{aspect-ratio:4/5;background:var(--color-secondary);overflow:hidden;margin-bottom:15px}.product__main-image img{width:100%;height:100%;object-fit:cover}
-    .product__thumbnails-wrapper{position:relative;display:flex;align-items:center;gap:10px}.product__thumbnails{display:flex;gap:10px;overflow:hidden;flex:1}.product__thumbnail{min-width:80px;width:80px;height:100px;background:var(--color-secondary);overflow:hidden;cursor:pointer;opacity:.5;transition:opacity .3s ease;border:2px solid transparent}.product__thumbnail:hover,.product__thumbnail.active{opacity:1;border-color:var(--color-primary)}.product__thumbnail img{width:100%;height:100%;object-fit:cover}
-    .product__thumb-nav{width:30px;height:30px;background:var(--color-secondary);border:1px solid var(--color-border);color:var(--color-foreground);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;flex-shrink:0}.product__thumb-nav:hover{background:var(--color-primary);color:var(--color-background)}.product__thumb-nav.hidden{opacity:0;pointer-events:none}
+    .product{padding:120px 0 80px}.product__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}.product__gallery{position:sticky;top:100px}
+    .product__main-image{position:relative;aspect-ratio:4/5;background:var(--color-secondary);overflow:hidden;margin-bottom:15px}.product__main-image img{width:100%;height:100%;object-fit:cover}
+    .product__nav{position:absolute;top:50%;transform:translateY(-50%);width:60px;height:60px;background:rgba(0,0,0,0.6);border:2px solid var(--color-primary);color:var(--color-foreground);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;font-size:2.4rem;z-index:10}.product__nav:hover{background:var(--color-primary);color:var(--color-background)}.product__nav.hidden{opacity:0;pointer-events:none}.product__nav--prev{left:15px}.product__nav--next{right:15px}
+    .product__dots{display:flex;justify-content:center;gap:8px;margin-top:15px}.product__dot{width:10px;height:10px;border-radius:50%;background:var(--color-border);cursor:pointer;transition:background .3s ease}.product__dot.active{background:var(--color-primary)}
     .product__info{padding-top:20px}.product__title{font-family:var(--font-heading);font-size:3.6rem;letter-spacing:.05em;margin-bottom:5px;line-height:1.2}.product__subtitle{font-family:var(--font-body);font-size:1.4rem;color:var(--color-primary);opacity:.8;margin-bottom:15px}.product__price{font-family:var(--font-heading);font-size:2.4rem;color:var(--color-primary);margin-bottom:30px}.product__divider{height:1px;background:var(--color-border);margin:30px 0}.product__description{font-size:1.5rem;line-height:1.8;opacity:.85;margin-bottom:30px}
     .product__size-selector{margin-bottom:30px}.product__size-label{display:block;font-family:var(--font-heading);font-size:1.2rem;letter-spacing:.1em;margin-bottom:15px}.product__sizes{display:flex;gap:10px;flex-wrap:wrap}.product__size-btn{padding:12px 24px;font-family:var(--font-heading);font-size:1.4rem;letter-spacing:.1em;background:transparent;border:1px solid var(--color-border);color:var(--color-foreground);cursor:pointer;transition:all .3s ease}.product__size-btn:hover{border-color:var(--color-primary)}.product__size-btn.active{background:var(--color-primary);color:var(--color-background);border-color:var(--color-primary)}
     .product__buy-btn{display:block;width:100%;padding:18px;font-family:var(--font-heading);font-size:1.4rem;letter-spacing:.2em;text-align:center;background:var(--color-primary);color:var(--color-background);border:2px solid var(--color-primary);cursor:pointer;transition:all .3s ease;text-decoration:none}.product__buy-btn:hover{background:0 0;color:var(--color-primary)}
@@ -21,7 +22,7 @@
     .footer{background:#050505;border-top:1px solid var(--color-border);padding:60px 0 30px;margin-top:80px}.footer__inner{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}.footer__title{font-family:var(--font-heading);font-size:1.3rem;letter-spacing:.15em;color:var(--color-primary);margin-bottom:20px}.footer__links{list-style:none}.footer__links li{margin-bottom:10px}.footer__links a{font-size:1.3rem;opacity:.7;transition:all .3s ease}.footer__links a:hover{opacity:1;color:var(--color-primary)}.footer__social{display:flex;gap:15px;margin-top:20px}.footer__social a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--color-border);transition:all .3s ease}.footer__social a:hover{border-color:var(--color-primary);color:var(--color-primary)}.footer__social svg{width:18px;height:18px}.footer__bottom{margin-top:50px;padding-top:30px;border-top:1px solid var(--color-border);text-align:center}.footer__copyright{font-size:1.2rem;opacity:.5}
     .mobile-menu{display:none;position:fixed;top:var(--header-height);left:0;right:0;bottom:0;background:var(--color-background);z-index:999;padding:40px 20px}.mobile-menu.active{display:block}.mobile-menu a{display:block;padding:20px 0;font-family:var(--font-heading);font-size:2rem;letter-spacing:.1em;border-bottom:1px solid var(--color-border)}
     @media (max-width:1024px){.product__inner{grid-template-columns:1fr;gap:40px}.product__gallery{position:relative;top:0}.footer__inner{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:768px){.page-width{padding:0 20px}.header__nav{display:none}.header__icons{right:20px}.mobile-menu-btn{display:flex}.product__title{font-size:2.8rem}.product__sizes{gap:8px}.product__size-btn{padding:10px 18px;font-size:1.2rem}.product__trust{flex-wrap:wrap;gap:15px}.footer__inner{grid-template-columns:1fr}}
+    @media (max-width:768px){.page-width{padding:0 20px}.header__nav{display:none}.header__icons{right:20px}.mobile-menu-btn{display:flex}.product__title{font-size:2.8rem}.product__sizes{gap:8px}.product__size-btn{padding:10px 18px;font-size:1.2rem}.product__trust{flex-wrap:wrap;gap:15px}.footer__inner{grid-template-columns:1fr}.product__nav{width:50px;height:50px;font-size:2rem}}
   </style>
 </head>
 <body>
@@ -34,12 +35,10 @@
         <div class="product__gallery">
           <div class="product__main-image">
             <img id="mainImage" src="images/ATT-men-S-1.jpeg" alt="Andros Tears Tee - Men's">
+            <button class="product__nav product__nav--prev" id="navPrev">&#8249;</button>
+            <button class="product__nav product__nav--next" id="navNext">&#8250;</button>
           </div>
-          <div class="product__thumbnails-wrapper">
-            <button class="product__thumb-nav" id="thumbPrev">&#8249;</button>
-            <div class="product__thumbnails" id="thumbnails"></div>
-            <button class="product__thumb-nav" id="thumbNext">&#8250;</button>
-          </div>
+          <div class="product__dots" id="dots"></div>
         </div>
 
         <div class="product__info">
@@ -98,8 +97,7 @@
     };
 
     let currentSize = 'S';
-    let currentImageIndex = 0;
-    const maxThumbs = 5;
+    let currentIndex = 0;
 
     // Size buttons
     document.querySelectorAll('.product__size-btn').forEach(btn => {
@@ -107,53 +105,45 @@
         document.querySelectorAll('.product__size-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         currentSize = this.dataset.size;
-        currentImageIndex = 0;
+        currentIndex = 0;
         updateGallery();
         document.getElementById('buyButton').href = sizeData[currentSize].stripeLink;
       });
     });
 
-    // Arrow buttons
-    document.getElementById('thumbPrev').addEventListener('click', function() {
+    // Navigation
+    document.getElementById('navPrev').addEventListener('click', function() {
       const images = sizeData[currentSize].images;
-      if (currentImageIndex > 0) {
-        currentImageIndex--;
-        updateGallery();
-      }
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateGallery();
     });
 
-    document.getElementById('thumbNext').addEventListener('click', function() {
+    document.getElementById('navNext').addEventListener('click', function() {
       const images = sizeData[currentSize].images;
-      if (currentImageIndex < images.length - 1) {
-        currentImageIndex++;
-        updateGallery();
-      }
+      currentIndex = (currentIndex + 1) % images.length;
+      updateGallery();
     });
 
     function updateGallery() {
       const images = sizeData[currentSize].images;
-      
-      // Update main image
-      document.getElementById('mainImage').src = images[currentImageIndex];
-      
-      // Update thumbnails
-      const container = document.getElementById('thumbnails');
-      container.innerHTML = '';
-      
-      images.forEach((img, index) => {
-        const thumb = document.createElement('div');
-        thumb.className = 'product__thumbnail' + (index === currentImageIndex ? ' active' : '');
-        thumb.innerHTML = '<img src="' + img + '" alt="View ' + (index + 1) + '">';
-        thumb.addEventListener('click', function() {
-          currentImageIndex = index;
+      document.getElementById('mainImage').src = images[currentIndex];
+
+      // Update dots
+      const dotsContainer = document.getElementById('dots');
+      dotsContainer.innerHTML = '';
+      images.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'product__dot' + (index === currentIndex ? ' active' : '');
+        dot.addEventListener('click', function() {
+          currentIndex = index;
           updateGallery();
         });
-        container.appendChild(thumb);
+        dotsContainer.appendChild(dot);
       });
 
-      // Update arrow visibility
-      document.getElementById('thumbPrev').classList.toggle('hidden', currentImageIndex === 0);
-      document.getElementById('thumbNext').classList.toggle('hidden', currentImageIndex === images.length - 1);
+      // Update nav visibility
+      document.getElementById('navPrev').classList.toggle('hidden', images.length <= 1);
+      document.getElementById('navNext').classList.toggle('hidden', images.length <= 1);
     }
 
     // Initialize
