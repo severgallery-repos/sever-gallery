@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andros Tears Tee - Men's | Sever Gallery</title>
+  <link rel="icon" type="image/gif" href="images/logo.gif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
     :root{--font-heading:'Bebas Neue',sans-serif;--font-body:'Inter',sans-serif;--color-background:#000;--color-foreground:#fff;--color-primary:#c0c0c0;--color-secondary:#0d0d0d;--color-border:#333;--page-width:1400px;--header-height:70px}*{box-sizing:border-box;margin:0;padding:0}html{font-size:62.5%}body{font-family:var(--font-body);font-size:1.4rem;line-height:1.6;color:var(--color-foreground);background-color:var(--color-background)}a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}.page-width{max-width:var(--page-width);margin:0 auto;padding:0 40px}.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--color-background);border-bottom:1px solid var(--color-border)}.header__inner{display:flex;align-items:center;justify-content:center;height:var(--header-height);position:relative}.header__nav{display:flex;gap:40px}.header__nav a{font-family:var(--font-heading);font-size:1.4rem;letter-spacing:.15em;transition:color .3s ease}.header__nav a:hover{color:var(--color-primary)}.header__icons{position:absolute;right:40px}.header__icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:color .3s ease}.header__icon:hover{color:var(--color-primary)}.header__icon svg{width:20px;height:20px}.mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:0 0;border:none;cursor:pointer;padding:5px;position:absolute;left:20px}.mobile-menu-btn span{width:24px;height:2px;background:var(--color-foreground)}
     .product{padding:120px 0 80px}.product__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}.product__gallery{position:sticky;top:100px}.product__main-image{aspect-ratio:4/5;background:var(--color-secondary);overflow:hidden;margin-bottom:15px}.product__main-image img{width:100%;height:100%;object-fit:cover}
     .product__thumbnails-wrapper{position:relative;display:flex;align-items:center;gap:10px}.product__thumbnails{display:flex;gap:10px;overflow:hidden;flex:1}.product__thumbnail{min-width:80px;width:80px;height:100px;background:var(--color-secondary);overflow:hidden;cursor:pointer;opacity:.5;transition:opacity .3s ease;border:2px solid transparent}.product__thumbnail:hover,.product__thumbnail.active{opacity:1;border-color:var(--color-primary)}.product__thumbnail img{width:100%;height:100%;object-fit:cover}
-    .product__thumb-nav{width:30px;height:30px;background:var(--color-secondary);border:1px solid var(--color-border);color:var(--color-foreground);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;flex-shrink:0}.product__thumb-nav:hover{background:var(--color-primary);color:var(--color-background)}.product__thumb-nav:disabled{opacity:.3;cursor:not-allowed}.product__thumb-nav:disabled:hover{background:var(--color-secondary);color:var(--color-foreground)}
+    .product__thumb-nav{width:30px;height:30px;background:var(--color-secondary);border:1px solid var(--color-border);color:var(--color-foreground);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;flex-shrink:0}.product__thumb-nav:hover{background:var(--color-primary);color:var(--color-background)}.product__thumb-nav.hidden{opacity:0;pointer-events:none}
     .product__info{padding-top:20px}.product__title{font-family:var(--font-heading);font-size:3.6rem;letter-spacing:.05em;margin-bottom:5px;line-height:1.2}.product__subtitle{font-family:var(--font-body);font-size:1.4rem;color:var(--color-primary);opacity:.8;margin-bottom:15px}.product__price{font-family:var(--font-heading);font-size:2.4rem;color:var(--color-primary);margin-bottom:30px}.product__divider{height:1px;background:var(--color-border);margin:30px 0}.product__description{font-size:1.5rem;line-height:1.8;opacity:.85;margin-bottom:30px}
     .product__size-selector{margin-bottom:30px}.product__size-label{display:block;font-family:var(--font-heading);font-size:1.2rem;letter-spacing:.1em;margin-bottom:15px}.product__sizes{display:flex;gap:10px;flex-wrap:wrap}.product__size-btn{padding:12px 24px;font-family:var(--font-heading);font-size:1.4rem;letter-spacing:.1em;background:transparent;border:1px solid var(--color-border);color:var(--color-foreground);cursor:pointer;transition:all .3s ease}.product__size-btn:hover{border-color:var(--color-primary)}.product__size-btn.active{background:var(--color-primary);color:var(--color-background);border-color:var(--color-primary)}
     .product__buy-btn{display:block;width:100%;padding:18px;font-family:var(--font-heading);font-size:1.4rem;letter-spacing:.2em;text-align:center;background:var(--color-primary);color:var(--color-background);border:2px solid var(--color-primary);cursor:pointer;transition:all .3s ease;text-decoration:none}.product__buy-btn:hover{background:0 0;color:var(--color-primary)}
@@ -35,9 +36,9 @@
             <img id="mainImage" src="images/ATT-men-S-1.jpeg" alt="Andros Tears Tee - Men's">
           </div>
           <div class="product__thumbnails-wrapper">
-            <button class="product__thumb-nav" id="thumbPrev" onclick="scrollThumbs(-1)">&#8249;</button>
+            <button class="product__thumb-nav" id="thumbPrev">&#8249;</button>
             <div class="product__thumbnails" id="thumbnails"></div>
-            <button class="product__thumb-nav" id="thumbNext" onclick="scrollThumbs(1)">&#8250;</button>
+            <button class="product__thumb-nav" id="thumbNext">&#8250;</button>
           </div>
         </div>
 
@@ -51,10 +52,10 @@
           <div class="product__size-selector">
             <span class="product__size-label">SELECT SIZE</span>
             <div class="product__sizes">
-              <button class="product__size-btn active" data-size="S" onclick="selectSize('S', this)">S</button>
-              <button class="product__size-btn" data-size="M" onclick="selectSize('M', this)">M</button>
-              <button class="product__size-btn" data-size="L" onclick="selectSize('L', this)">L</button>
-              <button class="product__size-btn" data-size="XL" onclick="selectSize('XL', this)">XL</button>
+              <button class="product__size-btn active" data-size="S">S</button>
+              <button class="product__size-btn" data-size="M">M</button>
+              <button class="product__size-btn" data-size="L">L</button>
+              <button class="product__size-btn" data-size="XL">XL</button>
             </div>
           </div>
 
@@ -97,60 +98,66 @@
     };
 
     let currentSize = 'S';
-    let thumbStart = 0;
+    let currentImageIndex = 0;
     const maxThumbs = 5;
 
-    function selectSize(size, btn) {
-      currentSize = size;
-      thumbStart = 0;
-      const data = sizeData[size];
+    // Size buttons
+    document.querySelectorAll('.product__size-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.product__size-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentSize = this.dataset.size;
+        currentImageIndex = 0;
+        updateGallery();
+        document.getElementById('buyButton').href = sizeData[currentSize].stripeLink;
+      });
+    });
 
-      document.querySelectorAll('.product__size-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    // Arrow buttons
+    document.getElementById('thumbPrev').addEventListener('click', function() {
+      const images = sizeData[currentSize].images;
+      if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateGallery();
+      }
+    });
 
-      updateImages(data.images);
-      document.getElementById('buyButton').href = data.stripeLink;
-    }
+    document.getElementById('thumbNext').addEventListener('click', function() {
+      const images = sizeData[currentSize].images;
+      if (currentImageIndex < images.length - 1) {
+        currentImageIndex++;
+        updateGallery();
+      }
+    });
 
-    function updateImages(images) {
-      document.getElementById('mainImage').src = images[0];
-      renderThumbnails(images);
-    }
-
-    function renderThumbnails(images) {
+    function updateGallery() {
+      const images = sizeData[currentSize].images;
+      
+      // Update main image
+      document.getElementById('mainImage').src = images[currentImageIndex];
+      
+      // Update thumbnails
       const container = document.getElementById('thumbnails');
       container.innerHTML = '';
       
-      const visibleImages = images.slice(thumbStart, thumbStart + maxThumbs);
-      
-      visibleImages.forEach((img, index) => {
+      images.forEach((img, index) => {
         const thumb = document.createElement('div');
-        thumb.className = 'product__thumbnail' + (index === 0 && thumbStart === 0 ? ' active' : '');
-        thumb.onclick = function() { changeImage(img, this); };
-        thumb.innerHTML = '<img src="' + img + '" alt="View ' + (thumbStart + index + 1) + '">';
+        thumb.className = 'product__thumbnail' + (index === currentImageIndex ? ' active' : '');
+        thumb.innerHTML = '<img src="' + img + '" alt="View ' + (index + 1) + '">';
+        thumb.addEventListener('click', function() {
+          currentImageIndex = index;
+          updateGallery();
+        });
         container.appendChild(thumb);
       });
 
-      document.getElementById('thumbPrev').disabled = thumbStart === 0;
-      document.getElementById('thumbNext').disabled = thumbStart + maxThumbs >= images.length;
-    }
-
-    function scrollThumbs(direction) {
-      const images = sizeData[currentSize].images;
-      thumbStart += direction;
-      if (thumbStart < 0) thumbStart = 0;
-      if (thumbStart > images.length - maxThumbs) thumbStart = images.length - maxThumbs;
-      renderThumbnails(images);
-    }
-
-    function changeImage(src, el) {
-      document.getElementById('mainImage').src = src;
-      document.querySelectorAll('.product__thumbnail').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
+      // Update arrow visibility
+      document.getElementById('thumbPrev').classList.toggle('hidden', currentImageIndex === 0);
+      document.getElementById('thumbNext').classList.toggle('hidden', currentImageIndex === images.length - 1);
     }
 
     // Initialize
-    updateImages(sizeData['S'].images);
+    updateGallery();
   </script>
 </body>
 </html>
