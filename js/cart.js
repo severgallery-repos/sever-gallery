@@ -16,7 +16,7 @@ const SeverCart = {
   addItem(item) {
     const cart = this.getCart();
     const existingIndex = cart.findIndex(
-      i => i.priceId === item.priceId && i.size === item.size
+      i => i.priceId === item.priceId && (i.size || '') === (item.size || '')
     );
 
     if (existingIndex > -1) {
@@ -32,14 +32,14 @@ const SeverCart = {
   // Remove item from cart
   removeItem(priceId, size) {
     let cart = this.getCart();
-    cart = cart.filter(i => !(i.priceId === priceId && i.size === size));
+    cart = cart.filter(i => !(i.priceId === priceId && (i.size || '') === (size || '')));
     this.saveCart(cart);
   },
 
   // Update quantity
   updateQuantity(priceId, size, quantity) {
     const cart = this.getCart();
-    const item = cart.find(i => i.priceId === priceId && i.size === size);
+    const item = cart.find(i => i.priceId === priceId && (i.size || '') === (size || ''));
     if (item) {
       item.quantity = quantity;
       if (item.quantity <= 0) {
